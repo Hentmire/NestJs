@@ -1,2 +1,1 @@
-# NestJs
-My pet project on NestJS
+#My pet project using NestJS
