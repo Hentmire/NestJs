@@ -5,10 +5,11 @@ services:
     container_name: mongo
     restart: always
     environment:
-    - MONGO_INITDB_ROOT_USERNAME=admin
-    - MONGO_INITDB_ROOT_PASSWORD=admin
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
     ports:
-    - 27017:27017
+      - 27017:27017
     volumes:
-    - ./mongo-data-4.4:/data/db
-    command: --wiredTigerCacheSizeGB 1.5
+      - ./mongo-data-4.4:/data/db
+    command:  [--auth]
+
