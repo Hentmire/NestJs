@@ -4,7 +4,7 @@ import { Types, disconnect } from 'mongoose';
 import * as request from 'supertest';
 import { AppModule } from '../src/app.module';
 import { CreateReviewDto } from '../src/review/dto/create-review.dto';
-import { REVIEW_NOT_FOUND } from '../src/review/review.constants';
+import { REVIEW_NOT_FOUND_ERROR } from '../src/review/review.constants';
 import { AuthDto } from '../src/auth/dto/auth.dto';
 
 const loginDto: AuthDto = {
@@ -92,7 +92,7 @@ describe('AppController (e2e)', () => {
 			.set('Authorization', 'Bearer ' + token)
 			.expect(404, {
 				statusCode: 404,
-				message: REVIEW_NOT_FOUND,
+				message: REVIEW_NOT_FOUND_ERROR,
 			});
 	});
 

@@ -8,26 +8,26 @@ import { ReviewModel } from '../review/review.model';
 
 @Injectable()
 export class ProductService {
-	constructor(@InjectModel(ProductModel) private readonly produceModel: ModelType<ProductModel>) { }
+	constructor(@InjectModel(ProductModel) private readonly productModel: ModelType<ProductModel>) { }
 
 	async create(dto: CreateProduceDto) {
-		return this.produceModel.create(dto);
+		return this.productModel.create(dto);
 	}
 
 	async findById(id: string) {
-		return this.produceModel.findById(id).exec();
+		return this.productModel.findById(id).exec();
 	}
 
 	async deleteById(id: string) {
-		return this.produceModel.findByIdAndDelete(id).exec();
+		return this.productModel.findByIdAndDelete(id).exec();
 	}
 
 	async updateById(id: string, dto: CreateProduceDto) {
-		return this.produceModel.findByIdAndUpdate(id, dto, { new: true }).exec();
+		return this.productModel.findByIdAndUpdate(id, dto, { new: true }).exec();
 	}
 
 	async findWithReviews(dto: FindProductDto) {
-		return this.produceModel.aggregate([
+		return this.productModel.aggregate([
 			{
 				$match: {
 					categories: dto.category,
