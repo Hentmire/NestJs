@@ -8,7 +8,7 @@ export enum TopLevelCategory {
 	Products
 }
 
-class HhData {
+export class HhData {
 	@prop()
 	count: number;
 
@@ -20,6 +20,9 @@ class HhData {
 
 	@prop()
 	seniorSalary: number;
+
+	@prop()
+	updatedAt: Date;
 }
 
 class TopPageAdvantage {
